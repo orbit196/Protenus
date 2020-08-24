@@ -11,7 +11,7 @@ Assumptions:
 * URLs are publicly accessible and not within a private network
 * Assuming that the underlying architecture is based on the RESTful paradigm
 * Client-server architecture
-* Each GET request is stateless and the server has no idea of the state of previous requests
+* Each GET request is stateless and the server has no idea as to the state of previous requests
 * Clients should not be able to tell if HTTP requests are routed to servers that serve as proxies
 """
 
@@ -50,7 +50,7 @@ class Monitor:
             # Closing the response
 			response.close()
 
-			# Implementing threading to call fetch the URL every 60 seconds
+			# Implementing threading to call fetch on the URL every 60 seconds
 			threading.Timer(60, self.fetchURL).start()
 		except urllib2.HTTPError as e:
 			# Catching HTTP request errors; prints error code 
